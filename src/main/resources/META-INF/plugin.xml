@@ -2,7 +2,7 @@
     <id>io.github.askmeagain.bookmarkkeeper</id>
     <name>BookmarkKeeper</name>
     <version>1.0.0</version>
-    <vendor url="https://github.com/AskMeAgain/BookmarkKeeper">You</vendor>
+    <vendor url="https://github.com/AskMeAgain/BookmarkKeeper">AskMeAgain</vendor>
 
     <description>
         <!--........................this will be replaced by the pathPluginXml gradle task...........................-->

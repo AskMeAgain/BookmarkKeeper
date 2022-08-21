@@ -16,6 +16,8 @@ public class BookmarkKeeperPanel extends TaskDialogPanel {
 
   public BookmarkKeeperPanel(Project project) {
     this.project = project;
+    keepBookmarksCheckbox.setSelected(true);
+
     BookmarkKeeperManager.getInstance().saveBookmarks(project);
   }
 
