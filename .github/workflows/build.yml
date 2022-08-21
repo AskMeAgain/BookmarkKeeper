@@ -23,10 +23,3 @@ jobs:
           settings-path: ${{ github.workspace }} # location for the settings.xml file
       - name: Run tests
         run: gradle test
-      - name: Archive code coverage results
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: reports
-          path: |
-            /home/runner/work/MoreShortcuts/MoreShortcuts/build/reports/tests/test/
