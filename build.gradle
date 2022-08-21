@@ -3,7 +3,7 @@ plugins {
     id 'java'
 }
 
-group 'intellij.plugin.template'
+group 'io.github.askmeagain'
 version System.getenv("RELEASE_VERSION")
 
 repositories {

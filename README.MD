@@ -2,8 +2,3 @@
 
 If you are used to the Intellij Task flow then when clearing context, you will also
 lose all your bookmarks. This plugin adds a new checkbox to keep them instead.
-
-
-
-
-
