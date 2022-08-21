@@ -1,0 +1,21 @@
+<idea-plugin>
+    <id>intellij.plugin.template</id>
+    <name>IntellijPluginTemplate</name>
+    <version>0.1</version>
+    <vendor url="github url">You</vendor>
+
+    <description>
+        <!--........................this will be replaced by the pathPluginXml gradle task...........................-->
+    </description>
+
+    <idea-version since-build="213.4928.7"/>
+
+    <extensions defaultExtensionNs="com.intellij.tasks">
+        <dialogPanelProvider order="first" implementation="io.github.askmeagain.bookmarkkeeper.BookmarkKeeperExtensionPoint"/>
+    </extensions>
+
+    <depends>com.intellij.tasks</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+</idea-plugin>

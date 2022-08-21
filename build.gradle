@@ -1,0 +1,47 @@
+plugins {
+    id 'org.jetbrains.intellij' version '1.5.2'
+    id 'java'
+}
+
+group 'intellij.plugin.template'
+version System.getenv("RELEASE_VERSION")
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+intellij {
+    updateSinceUntilBuild = false
+    version = '2021.3.2'
+    plugins = ['com.intellij.java', 'com.intellij.tasks']
+}
+
+patchPluginXml {
+    version = project.getVersion()
+    changeNotes = new File("marketplace-changenotes.html").text
+    pluginDescription = new File("marketplace-description.html").text
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+signPlugin {
+    certificateChain = System.getenv("CERTIFICATE_CHAIN")
+    privateKey = System.getenv("PRIVATE_KEY")
+    password = System.getenv("PRIVATE_KEY_PASSWORD")
+}
+
+publishPlugin {
+    token = System.getenv("PUBLISH_TOKEN")
+}

@@ -1,0 +1,32 @@
+name: Gradle Test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+          settings-path: ${{ github.workspace }} # location for the settings.xml file
+      - name: Run tests
+        run: gradle test
+      - name: Archive code coverage results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: reports
+          path: |
+            /home/runner/work/MoreShortcuts/MoreShortcuts/build/reports/tests/test/
