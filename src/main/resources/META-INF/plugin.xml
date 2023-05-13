@@ -10,8 +10,9 @@
 
     <idea-version since-build="213.4928.7"/>
 
-    <extensions defaultExtensionNs="com.intellij.tasks">
-        <dialogPanelProvider order="first" implementation="io.github.askmeagain.bookmarkkeeper.BookmarkKeeperExtensionPoint"/>
+    <extensions defaultExtensionNs="com.intellij">
+        <tasks.contextProvider order="first" implementation="io.github.askmeagain.bookmarkkeeper.extensions.WIPBookmarkContextProviderBefore"/>
+        <tasks.contextProvider order="last" implementation="io.github.askmeagain.bookmarkkeeper.extensions.WIPBookmarkContextProviderAfter"/>
     </extensions>
 
     <depends>com.intellij.tasks</depends>
