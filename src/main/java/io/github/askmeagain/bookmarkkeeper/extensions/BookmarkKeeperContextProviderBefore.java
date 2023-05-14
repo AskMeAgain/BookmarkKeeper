@@ -5,17 +5,15 @@ import com.intellij.tasks.TaskBundle;
 import com.intellij.tasks.context.WorkingContextProvider;
 import io.github.askmeagain.bookmarkkeeper.BookmarkKeeperManager;
 import org.jdom.Element;
-import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
-public class WIPBookmarkContextProviderAfter extends WorkingContextProvider {
+public class BookmarkKeeperContextProviderBefore extends WorkingContextProvider {
   @NotNull
   @Override
   public String getId() {
-    return "bookmarks2";
+    return "bookmarkKeeperBefore";
   }
 
-  @Nls(capitalization = Nls.Capitalization.Sentence)
   @NotNull
   @Override
   public String getDescription() {
@@ -24,16 +22,14 @@ public class WIPBookmarkContextProviderAfter extends WorkingContextProvider {
 
   @Override
   public void saveContext(@NotNull Project project, @NotNull Element toElement) {
-    BookmarkKeeperManager.getInstance().loadBookmarks(project);
+    BookmarkKeeperManager.getInstance().saveBookmarks(project);
   }
 
   @Override
   public void loadContext(@NotNull Project project, @NotNull Element fromElement) {
-    BookmarkKeeperManager.getInstance().loadBookmarks(project);
   }
 
   @Override
   public void clearContext(@NotNull Project project) {
-    BookmarkKeeperManager.getInstance().loadBookmarks(project);
   }
 }
