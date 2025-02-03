@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.intellij' version '1.5.2'
+    id("org.jetbrains.intellij.platform") version "2.2.1"
     id 'java'
 }
 
@@ -8,16 +8,18 @@ version System.getenv("RELEASE_VERSION")
 
 repositories {
     mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 dependencies {
+    intellijPlatform {
+        intellijIdeaCommunity '2024.3.2.1'
 
-}
-
-intellij {
-    updateSinceUntilBuild = false
-    version = '2021.3.2'
-    plugins = ['com.intellij.java', 'com.intellij.tasks']
+        bundledPlugin 'com.intellij.java'
+        bundledPlugin 'com.intellij.tasks'
+    }
 }
 
 patchPluginXml {
@@ -32,7 +34,7 @@ test {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
