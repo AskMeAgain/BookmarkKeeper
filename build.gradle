@@ -22,6 +22,16 @@ dependencies {
     }
 }
 
+intellijPlatform {
+    pluginConfiguration {
+        vendor {
+            name = 'AskMeAgain'
+            email = '-'
+            url = 'https://github.com/AskMeAgain/BookmarkKeeper'
+        }
+    }
+}
+
 patchPluginXml {
     version = project.getVersion()
     changeNotes = new File("marketplace-changenotes.html").text
