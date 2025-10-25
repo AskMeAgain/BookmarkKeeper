@@ -15,8 +15,6 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity '2024.3.2.1'
-
         bundledPlugin 'com.intellij.java'
         bundledPlugin 'com.intellij.tasks'
     }
