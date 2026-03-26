@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity '2025.1'
+        intellijIdeaCommunity '2026.1'
 
         bundledPlugin 'com.intellij.java'
         bundledPlugin 'com.intellij.tasks'
@@ -31,7 +31,8 @@ intellijPlatform {
             url = 'https://github.com/AskMeAgain/BookmarkKeeper'
         }
         ideaVersion {
-            sinceBuild = "251"
+            sinceBuild = "261"
+            untilBuild = "261.*"
         }
     }
 }
