@@ -1,9 +1,13 @@
 # Bookmark Keeper
 
-If you use the Intellij Task flow, then when clearing context, you will also
-lose all your bookmarks. 
+Annoyed that you lose all your bookmarks when switching tasks or branches in intellij?
 
-This plugin hooks into the task loading functionality and keeps all bookmarks synced when
-switching a task.
+This plugin hooks into the task loading & branch switching functionality and keeps all bookmarks where they belong.
+
+Since version 2.0.0 this plugin also keeps track of files which **dont exist on branches** and will restore them when they
+are available again, essentially fixing [IJPL-62074](https://youtrack.jetbrains.com/issue/IJPL-62074) (13 year old bug).
+
+Note: Sometimes bookmarks are **not immediately** available after restoring. Give it a few seconds and they work (no idea
+why)
 
 [Get the Plugin from the Marketplace](https://plugins.jetbrains.com/plugin/19746-bookmarkkeeper)
