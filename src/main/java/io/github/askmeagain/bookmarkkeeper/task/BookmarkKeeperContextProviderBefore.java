@@ -1,4 +1,4 @@
-package io.github.askmeagain.bookmarkkeeper.extensions;
+package io.github.askmeagain.bookmarkkeeper.task;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.tasks.TaskBundle;
@@ -7,11 +7,11 @@ import io.github.askmeagain.bookmarkkeeper.BookmarkKeeperManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-public class BookmarkKeeperContextProviderAfter extends WorkingContextProvider {
+public class BookmarkKeeperContextProviderBefore extends WorkingContextProvider {
   @NotNull
   @Override
   public String getId() {
-    return "bookmarkKeeperAfter";
+    return "bookmarkKeeperBefore";
   }
 
   @NotNull
@@ -22,16 +22,14 @@ public class BookmarkKeeperContextProviderAfter extends WorkingContextProvider {
 
   @Override
   public void saveContext(@NotNull Project project, @NotNull Element toElement) {
-    BookmarkKeeperManager.getInstance().loadBookmarks(project);
+    BookmarkKeeperManager.getInstance(project).OnContextClosed();
   }
 
   @Override
   public void loadContext(@NotNull Project project, @NotNull Element fromElement) {
-    BookmarkKeeperManager.getInstance().loadBookmarks(project);
   }
 
   @Override
   public void clearContext(@NotNull Project project) {
-    BookmarkKeeperManager.getInstance().loadBookmarks(project);
   }
 }

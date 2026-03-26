@@ -11,12 +11,14 @@
     <idea-version since-build="213.4928.7"/>
 
     <extensions defaultExtensionNs="com.intellij">
-        <tasks.contextProvider order="first" implementation="io.github.askmeagain.bookmarkkeeper.extensions.BookmarkKeeperContextProviderBefore"/>
-        <tasks.contextProvider order="last" implementation="io.github.askmeagain.bookmarkkeeper.extensions.BookmarkKeeperContextProviderAfter"/>
+        <tasks.contextProvider order="first" implementation="io.github.askmeagain.bookmarkkeeper.task.BookmarkKeeperContextProviderBefore"/>
+        <tasks.contextProvider order="last" implementation="io.github.askmeagain.bookmarkkeeper.task.BookmarkKeeperContextProviderAfter"/>
+        <postStartupActivity implementation="io.github.askmeagain.bookmarkkeeper.git.BranchSwitchStartupActivity"/>
     </extensions>
 
     <depends>com.intellij.tasks</depends>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
+    <depends>Git4Idea</depends>
 
 </idea-plugin>

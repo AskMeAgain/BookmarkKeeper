@@ -19,6 +19,7 @@ dependencies {
 
         bundledPlugin 'com.intellij.java'
         bundledPlugin 'com.intellij.tasks'
+        bundledPlugin 'Git4Idea'
     }
 }
 
@@ -37,8 +38,8 @@ intellijPlatform {
 
 patchPluginXml {
     version = project.getVersion()
-    changeNotes = new File("marketplace-changenotes.html").text
-    pluginDescription = new File("marketplace-description.html").text
+    changeNotes = project.file("marketplace-changenotes.html").text
+    pluginDescription = project.file("marketplace-description.html").text
 }
 
 test {
