@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.intellij.platform") version "2.2.1"
+    id("org.jetbrains.intellij.platform") version "2.10.5"
     id 'java'
 }
 
@@ -24,13 +24,13 @@ dependencies {
 }
 
 intellijPlatform {
-    pluginConfiguration {
-        vendor {
+    pluginConfiguration.with {
+        vendor.with {
             name = 'AskMeAgain'
             email = '-'
             url = 'https://github.com/AskMeAgain/BookmarkKeeper'
         }
-        ideaVersion {
+        ideaVersion.with {
             sinceBuild = "261"
             untilBuild = "261.*"
         }
