@@ -12,15 +12,15 @@ import org.jetbrains.annotations.Nullable;
 public class BranchSwitchStartupActivity implements ProjectActivity {
 
   @Override
-  public @Nullable Object execute(@NotNull Project project, @NotNull Continuation<? super Unit> continuation) {
+  public @Nullable Object execute(Project project, @NotNull Continuation<? super Unit> continuation) {
     project.getMessageBus().connect(project).subscribe(BranchChangeListener.VCS_BRANCH_CHANGED, new BranchChangeListener() {
       @Override
-      public void branchWillChange(@NotNull String branchName) {
+      public void branchWillChange(String branchName) {
         BookmarkKeeperManager.getInstance(project).OnContextClosed();
       }
       
       @Override
-      public void branchHasChanged(@NotNull String branchName) {
+      public void branchHasChanged(String branchName) {
         BookmarkKeeperManager.getInstance(project).OnContextOpened();
       }
     });
