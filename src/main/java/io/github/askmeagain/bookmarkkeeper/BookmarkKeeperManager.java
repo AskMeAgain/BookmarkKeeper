@@ -10,6 +10,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
+import com.intellij.platform.diagnostic.telemetry.helpers.Milliseconds;
 import com.intellij.util.concurrency.AppExecutorUtil;
 import io.github.askmeagain.bookmarkkeeper.dtos.BookmarkContainer;
 import io.github.askmeagain.bookmarkkeeper.state.StateData;
@@ -24,7 +25,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@State(name = "BookmarkKeeperSettings", storages = @Storage("bookmarkKeeper-3.0.0.xml"))
+@State(name = "BookmarkKeeperSettings", storages = @Storage("bookmarkKeeper-4.0.0.xml"))
 @Service(Service.Level.PROJECT)
 public final class BookmarkKeeperManager implements PersistentStateComponent<StateData> {
 
